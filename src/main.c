@@ -1,3 +1,4 @@
+/*
 #include "GL/gl.h"
 #include "SDL/SDL.h"
 
@@ -31,6 +32,19 @@ void _start() {
 
   } while (evnt.type != SDL_QUIT);
   SDL_Quit();
+
+  __asm__ ( \
+    "movl $1,%eax\n"\
+    "xorl %ebx,%ebx\n"\
+    "int $128\n"\
+  );
+}
+*/
+
+#include <stdio.h>
+
+void _start() {
+  printf("hello, world\n");
 
   __asm__ ( \
     "movl $1,%eax\n"\
